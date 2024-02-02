@@ -40,6 +40,15 @@ public class ProductRepository {
         }
     }
 
+    public Product delete(String productId) {
+        Product product = findById(productId);
+        if (product != null) {
+            productData.remove(product);
+            return product;
+        }
+        return null;
+    }
+
     public Iterator<Product> findAll() {
         return productData.iterator();
     }
