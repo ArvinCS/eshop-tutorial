@@ -24,4 +24,3 @@ jobs:
           args: >
             -Dsonar.organization=arvincs
             -Dsonar.projectKey=ArvinCS_eshop-tutorial
-            -Dsonar.java.binaries=.
