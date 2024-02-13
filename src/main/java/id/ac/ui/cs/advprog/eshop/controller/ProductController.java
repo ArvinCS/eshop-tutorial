@@ -49,8 +49,7 @@ public class ProductController {
     @PostMapping("/{productId}/edit")
     public String editProductPost(@PathVariable String productId, @ModelAttribute Product updatedProduct, Model model) {
         Product product = service.findById(productId);
-        if (product == null
-                || !product.getProductId().equals(updatedProduct.getProductId())) {
+        if (product == null) {
             return "redirect:/product/list";
         }
 

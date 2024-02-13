@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
-    private ProductRepository productRepository;
+    private ProductRepository productRepository = new ProductRepository();
 
     @Override
     public Product findById(String productId) {
@@ -27,8 +27,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product update(String productId, Product product) {
-        productRepository.update(productId, product);
-        return product;
+        return productRepository.update(productId, product);
     }
 
     @Override
