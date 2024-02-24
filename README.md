@@ -18,4 +18,20 @@ I think the cleanliness of the code will be worse because some repetitions of th
 
 ## Tutorial 2
 ### Reflection
-Code quality issues that I fixed is inconsistent naming on the template file, for example, returning "homePage" on controller but the real file name is "HomePage". Not only that, I also removed unused parameter variables. I think these implementations have met the CI/CD principles. The implementation uses GitHub workflow to maintain each commit and pull requests to have the proper code (testing and SonarCube analysis). Not only that, we also make uses of it to deploy our project into Koyeb. 
+Code quality issues that I fixed is inconsistent naming on the template file, for example, returning "homePage" on controller but the real file name is "HomePage". Not only that, I also removed unused parameter variables. I think these implementations have met the CI/CD principles. The implementation uses GitHub workflow to maintain each commit and pull requests to have the proper code (testing and SonarCube analysis). Not only that, we also make uses of it to deploy our project into Koyeb.
+
+## Tutorial 3
+### Reflection
+- I have implemented SRP in my code. I splitted `CarController` from `ProductController` so that `CarController` handles only car related queries and `ProductController` handles only product related queries in their own class files. 
+- I have implemented OCP in my code. For example, `CarService` and `ProductService` have only basic methods (such as delete, find, create, etc) thing that can be extended later.
+- I have implemented ISP in my code. I make sure interfaces are smallest and specific. 
+- I have implemented DIP in my code. I make sure `CarController` only depends on the interface not the class (`CarServiceImpl` to `CarService`). Other classes also depends on the abstract/interface rather than concrete class.
+
+The advantages of SOLID in my code:
+- Easier to maintain. It is because we make it so modular and specific. So, if something went wrong, we could track and maintain in smaller piece.
+- Easier to debug. It is because the error should appear in smaller scope that makes it easier to debug.
+- Easier to read for other people. It is because its specific thing, people could read and understand it faster.
+
+The disadvantages of not applying SOLID in my code:
+- Harder to maintain. As the code become bigger and complex, it will become harder to maintain.
+- Harder to debug. If we don't apply the SOLID, the scope of the error will become bigger than it is.
