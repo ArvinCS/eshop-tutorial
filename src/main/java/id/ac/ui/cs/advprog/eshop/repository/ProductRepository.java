@@ -17,11 +17,7 @@ public class ProductRepository {
                 .filter((currentProduct) -> currentProduct.getProductId().equals(productId))
                 .findAny();
 
-        if (productOptional.isPresent()) {
-            return productOptional.get();
-        } else {
-            return null;
-        }
+        return productOptional.orElse(null);
     }
     public Product create(Product product) {
         productData.add(product);
@@ -35,9 +31,8 @@ public class ProductRepository {
             product.setProductName(productDetail.getProductName());
             product.setProductQuantity(productDetail.getProductQuantity());
             return product;
-        } else {
-            return null;
         }
+        return null;
     }
 
     public Product delete(String productId) {
