@@ -99,7 +99,6 @@ public class PaymentServiceImplTest {
     @Test
     void testSetStatusPaymentToSuccess() {
         Payment payment = payments.get(2);
-        Order order = orders.get(2);
 
         doReturn(payment).when(paymentRepository).save(any(Payment.class));
         doReturn(payment).when(paymentRepository).findById(any(String.class));
