@@ -35,3 +35,13 @@ The advantages of SOLID in my code:
 The disadvantages of not applying SOLID in my code:
 - Harder to maintain. As the code become bigger and complex, it will become harder to maintain.
 - Harder to debug. If we don't apply the SOLID, the scope of the error will become bigger than it is.
+
+## Tutorial 4
+### Reflection
+> Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not. If not, explain things that you need to do next time you make more tests.
+
+I think these TDD workflows is useful for me specifically in this project. I have made several mistakes but detected immediately by the tests I have made before. It is useful if we have developed more complex things.
+
+> You have created unit tests in Tutorial. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not. If not, explain things that you need to do the next time you create more tests.
+
+I have created unit tests that followed F.I.R.S.T principle. It can be seen with how fast and easy to run the tests. They are also independent and consistent with result of each run. Not only that, the tests have strict assertions. I also make sure to cover the happy and unhappy path. 
