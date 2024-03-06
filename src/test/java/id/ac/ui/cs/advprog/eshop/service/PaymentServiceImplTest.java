@@ -144,16 +144,21 @@ public class PaymentServiceImplTest {
     @Test
     void testFindByIdIfIdFound() {
         Payment payment = payments.get(1);
+
         doReturn(payment).when(paymentRepository).findById(payment.getId());
 
         Payment result = paymentService.getPayment(payment.getId());
+        verify(paymentRepository, times(1)).findById(payment.getId());
         assertEquals(payment.getId(), result.getId());
     }
 
     @Test
     void testFindByIdIfIdNotFound() {
         doReturn(null).when(paymentRepository).findById("zczc");
-        assertNull(paymentService.getPayment("zczc"));
+
+        Payment result = paymentService.getPayment("zczc");
+        assertNull(result);
+        verify(paymentRepository, times(1)).findById("zczc");
     }
 
     @Test
