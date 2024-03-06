@@ -84,7 +84,7 @@ public class PaymentRepositoryTest {
         Payment payment = this.payments.get(1);
         paymentRepository.save(payment);
 
-        Payment newPayment = new Payment(payment.getId(), payment.getMethod(), PaymentStatus.REJECTED.getValue(), payment.getPaymentData(), orders.get(1));
+        Payment newPayment = new Payment(payment.getId(), payment.getMethod(), PaymentStatus.REJECTED.getValue(), payment.getPaymentData(), orders.get(0));
         Payment result = paymentRepository.save(newPayment);
         assertEquals(payment.getId(), result.getId());
 
